@@ -56,21 +56,17 @@ In the **“Novelty selection”** part of the task the worker is asked to selec
 ###Experiment Results
 Of all the annotations the workers made over all the tweets, every annotation is used to score the novelty of the tweet. If the tweet was selected as more novel it gets a +1, equally novel +0.5 and less novel -1. Aggregating all the score resulted in an ordered list of novel tweets. Tweets above the threshold is noted as novel and under the threshold as less novel. Of 21000 judgements, 137 tweets were scored. This low throughput of annotation data is caused by the comparative nature of the crowdsource task. If a tweet set contained 50 tweets, the first tweet needed 50 comparison. Exhaustively going down this comparison method, creates a lot of judgements. The upside of this comparison method, is that the ambiguity of judgements can be avoided. 
 
-###Experiment Results
+####Workflow
 From the raw data collected from Crowdflower, a csv is created with the worker ID, tweet ID and the corresponding highlighted words. Also information about the tweet is present at each line concerning novelty. First the csv file with the highlighted words are split in three datasets, one set contains novel words. The second set contains words not deemed novel and the last one contains words that belonged to irrelevant tweets.
  
 *Average words highlighted*
 After creating three sets containing information about the highlighted words, the average amount of highlighted words is calculated for each worker. This information can help in determining whether a worker is a spammer or not down the line.
 
-
 *Cosine distance and worker-worker disagreement*
 The next step is to use the Crowdtruth measures to check if the annotation of the worker are qualitative good. The novelty cosine calculates the distance similarity between aggregated annotation of all workers (without the current worker) and the worker itself. The worker-worker disagreement checks the degree of disagreement of the worker with the other workers. Sometimes a set of workers can disagree with the crowd without being a spammer. Worker-worker disagreement can pinpoint to sub-groups within the workers. The Crowdtruth ‘Metrics’ module is from Lepsma & Mauritz and is included in the database.
 
-
-
 *Spammer conditions*
 The gathered and created data can aid in spam detection. Under certain conditions some workers are noted as spammers.
-
 
 *Counted novelty per Tweet*
 After removing all the spammers from the results, the aggregated novelty score of each tweet is calculated. When a tweet is novel +1, tweet is equal +0.5 and when the tweet is not novel -1.
