@@ -1,5 +1,5 @@
 # Novelty_Detection
-Crowdsourcing novelty annotation data from tweets regarding the whaling activist event
+##Crowdsourcing novelty annotation data from tweets regarding the whaling activist event
 
 This repository contains the necessary steps and data collected and executed to reproduce the results for novelty detection. First, the collection of tweets and data are elaborated. The tweets are collected based on seed words given by activist event experts. Based on these seed words, data from the Twitter API are collected. In this section each feature is given a description. Subsequently, with the collected data, crowdsource experiments are run on the Crowdflower platform. The experiments and tasks are written in Javascript and a proprietary markup language from Crowdflower. Furthermore, the CrowdTruth platform is utilized to detect any sub-groups or spammers contaminating the annotation data.
 
