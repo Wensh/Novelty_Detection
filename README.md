@@ -56,12 +56,6 @@ In the **“Novelty selection”** part of the task the worker is asked to selec
 ###Experiment Results
 Of all the annotations the workers made over all the tweets, every annotation is used to score the novelty of the tweet. If the tweet was selected as more novel it gets a +1, equally novel +0.5 and less novel -1. Aggregating all the score resulted in an ordered list of novel tweets. Tweets above the threshold is noted as novel and under the threshold as less novel. Of 21000 judgements, 137 tweets were scored. This low throughput of annotation data is caused by the comparative nature of the crowdsource task. If a tweet set contained 50 tweets, the first tweet needed 50 comparison. Exhaustively going down this comparison method, creates a lot of judgements. The upside of this comparison method, is that the ambiguity of judgements can be avoided. 
 
-*Correlation results*
-Of all the features extracted from the tweets, the following features show significant correlations in table 1.
-
-Table 1. Correlations between novelty and features extracted from tweets
-
-
 ###Experiment Results
 From the raw data collected from Crowdflower, a csv is created with the worker ID, tweet ID and the corresponding highlighted words. Also information about the tweet is present at each line concerning novelty. First the csv file with the highlighted words are split in three datasets, one set contains novel words. The second set contains words not deemed novel and the last one contains words that belonged to irrelevant tweets.
  
