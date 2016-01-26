@@ -7,7 +7,7 @@ This repository contains the necessary steps and data collected and executed to 
 The seed words given by the social scientists for whaling event are used to collect tweets from the Twitter API. Various variables are collected statistics like retweet count, favorite count, media-links etc. Besides these data points, some other features are also collected or calculated. For relevancy to the whaling event, data from another experiment is used. This tweet event score is collected by Inel via crowdsourcing. Workers annotated at what rate words or sentences relate with the event. Two parts of the collected and processed data are presented here, a short description of the variables are given in the following section.
 
 ####Workers
--Worker_ID: Unique ID of the worker
+*Worker_ID: Unique ID of the worker
 -More_novel: Amount of times worker selected more novel for a tweet
 -Equally_novel: Amount of times worker selected equally novel for a tweet
 -Less_novel: Amount of times worker selected less novel for a tweet
