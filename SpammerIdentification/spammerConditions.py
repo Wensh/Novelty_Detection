@@ -30,34 +30,6 @@ avg_irrelevant_threshold = []
 avg_novel_selection = []
 explanation_output = []
 
-# #Novelty Cosine 1
-# def get_file_path_1(filename):
-#     file_path = os.path.join(os.getcwd(), filename)
-#     return file_path
-# def read_csv_1(filepath):
-#     with open(filepath, 'rU') as csvfile:
-#         reader = csv.reader(csvfile)
-#         #next(reader)
-#         for row in reader:
-#             key = row[0]
-#             worker_cosine_1[key] = float(row[1])
-# path_1 = get_file_path_1('Data/Novelty_Cosine.csv')
-# read_csv_1(path_1)
-#
-# #Worker Disagreement 2
-# def get_file_path_2(filename):
-#     file_path = os.path.join(os.getcwd(), filename)
-#     return file_path
-# def read_csv_2(filepath):
-#     with open(filepath, 'rU') as csvfile:
-#         reader = csv.reader(csvfile)
-#         #next(reader)
-#         for row in reader:
-#             key = row[0]
-#             worker_disagreement_2[key] = float(row[1])
-# path_2 = get_file_path_2('Data/Novelty_Worker_Disagreement.csv')
-# read_csv_2(path_2)
-
 #Consistency 3
 def get_file_path_3(filename):
     file_path = os.path.join(os.getcwd(), filename)
