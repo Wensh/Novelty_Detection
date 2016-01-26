@@ -22,8 +22,8 @@ The seed words given by the social scientists for whaling event are used to coll
 * Spammer: Worker noted as a spammer by filters
 
 ####Tweets
--Tweet_ID: Unique ID of the tweet
--Tweet_content: Content text of a tweet
+- Tweet_ID: Unique ID of the tweet
+- Tweet_content: Content text of a tweet
 -Tweet_date: Date when tweet was posted
 -Tweet_event_score: Rate of event relevance
 -Distance_similarity: Smallest Levenshtein distance between former tweets and the selected tweet.
