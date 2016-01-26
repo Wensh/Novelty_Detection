@@ -7,45 +7,45 @@ This repository contains the necessary steps and data collected and executed to 
 The seed words given by the social scientists for whaling event are used to collect tweets from the Twitter API. Various variables are collected statistics like retweet count, favorite count, media-links etc. Besides these data points, some other features are also collected or calculated. For relevancy to the whaling event, data from another experiment is used. This tweet event score is collected by Inel via crowdsourcing. Workers annotated at what rate words or sentences relate with the event. Two parts of the collected and processed data are presented here, a short description of the variables are given in the following section.
 
 ####Workers
-* Worker_ID: Unique ID of the worker
-* More_novel: Amount of times worker selected more novel for a tweet
-* Equally_novel: Amount of times worker selected equally novel for a tweet
-* Less_novel: Amount of times worker selected less novel for a tweet
-* Irrelevant: Amount of times worker selected irrelevant for a tweet
-* Irrelevant_behavior: Percentage of times the worker selected irrelevant for a tweet
-* Novelty_selection_percentage: Percentage of times the worker selected a novelty option for a tweet
-* Same_answer: True if user continuously only chooses one option
-* Average_novel_words: Average novel words highlighted by worker
-* Average_NOT_novel_words: Average not-novel words highlighted by worker
-* Novelty_cosine_similarity: Cosine similarity measure from CrowdTruth for novelty option for tweets
-* Novelty_worker_disagreement: Worker disagreement measure from CrowdTruth for novelty option for tweets
-* Spammer: Worker noted as a spammer by filters
+- Worker_ID: Unique ID of the worker
+- More_novel: Amount of times worker selected more novel for a tweet
+- Equally_novel: Amount of times worker selected equally novel for a tweet
+- Less_novel: Amount of times worker selected less novel for a tweet
+- Irrelevant: Amount of times worker selected irrelevant for a tweet
+- Irrelevant_behavior: Percentage of times the worker selected irrelevant for a tweet
+- Novelty_selection_percentage: Percentage of times the worker selected a novelty option for a tweet
+- Same_answer: True if user continuously only chooses one option
+- Average_novel_words: Average novel words highlighted by worker
+- Average_NOT_novel_words: Average not-novel words highlighted by worker
+- Novelty_cosine_similarity: Cosine similarity measure from CrowdTruth for novelty option for tweets
+- Novelty_worker_disagreement: Worker disagreement measure from CrowdTruth for novelty option for tweets
+- Spammer: Worker noted as a spammer by filters
 
 ####Tweets
 - Tweet_ID: Unique ID of the tweet
 - Tweet_content: Content text of a tweet
--Tweet_date: Date when tweet was posted
--Tweet_event_score: Rate of event relevance
--Distance_similarity: Smallest Levenshtein distance between former tweets and the selected tweet.
--ID: Tweet ID from the Twitter API
--User.handles: Twitter handles of the user
--User.followers: Amount of followers of user
--User.favorites_count: Amount of tweets the user favorited
--Retweet_count: Amount of times the tweet was retweeted
--Favorite_count: Amount of times the tweet was favorited
--Entities.urls: URL’s in tweets
--Media_type: Type of media in tweet (photo, video or other)
--User.friends_count: Amount of friends of user
--User.listed_count: In how many lists is the user listed
--User.url: URL given by the user for his profile
--User.description_length: Length of description of the user profile
--User.created_at: Date when twitter account was created
--User.profile_image_url: If a custom profile image is used
--User.profile_banner_url: If a custom profile banner is used
--Hashtag: Hashtags in tweet
--Entities_count: Amount of entities in tweet
--Sentiment_score: Sentiment score of tweet
--Novelty: novelty status of tweet
+- Tweet_date: Date when tweet was posted
+- Tweet_event_score: Rate of event relevance
+- Distance_similarity: Smallest Levenshtein distance between former tweets and the selected tweet.
+- ID: Tweet ID from the Twitter API
+- User.handles: Twitter handles of the user
+- User.followers: Amount of followers of user
+- User.favorites_count: Amount of tweets the user favorited
+- Retweet_count: Amount of times the tweet was retweeted
+- Favorite_count: Amount of times the tweet was favorited
+- Entities.urls: URL’s in tweets
+- Media_type: Type of media in tweet (photo, video or other)
+- User.friends_count: Amount of friends of user
+- User.listed_count: In how many lists is the user listed
+- User.url: URL given by the user for his profile
+- User.description_length: Length of description of the user profile
+- User.created_at: Date when twitter account was created
+- User.profile_image_url: If a custom profile image is used
+- User.profile_banner_url: If a custom profile banner is used
+- Hashtag: Hashtags in tweet
+- Entities_count: Amount of entities in tweet
+- Sentiment_score: Sentiment score of tweet
+- Novelty: novelty status of tweet
 
 ###Crowdsourcing Experiments
 The tasks on the Crowdflower platform consisted of two tasks. “Novelty selection (1)” task: is for annotating which tweet is more novel or irrelevant. The second task “words highlighting (2)” asks the user to highlight words that were novel, in comparison with the event summary description.
