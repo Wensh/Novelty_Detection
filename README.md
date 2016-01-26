@@ -8,18 +8,18 @@ The seed words given by the social scientists for whaling event are used to coll
 
 ####Workers
 * Worker_ID: Unique ID of the worker
-*More_novel: Amount of times worker selected more novel for a tweet
-*Equally_novel: Amount of times worker selected equally novel for a tweet
-*Less_novel: Amount of times worker selected less novel for a tweet
-*Irrelevant: Amount of times worker selected irrelevant for a tweet
-*Irrelevant_behavior: Percentage of times the worker selected irrelevant for a tweet
-*Novelty_selection_percentage: Percentage of times the worker selected a novelty option for a tweet
-*Same_answer: True if user continuously only chooses one option
-*Average_novel_words: Average novel words highlighted by worker
-*Average_NOT_novel_words: Average not-novel words highlighted by worker
-*Novelty_cosine_similarity: Cosine similarity measure from CrowdTruth for novelty option for tweets
-*Novelty_worker_disagreement: Worker disagreement measure from CrowdTruth for novelty option for tweets
-*Spammer: Worker noted as a spammer by filters
+* More_novel: Amount of times worker selected more novel for a tweet
+* Equally_novel: Amount of times worker selected equally novel for a tweet
+* Less_novel: Amount of times worker selected less novel for a tweet
+* Irrelevant: Amount of times worker selected irrelevant for a tweet
+* Irrelevant_behavior: Percentage of times the worker selected irrelevant for a tweet
+* Novelty_selection_percentage: Percentage of times the worker selected a novelty option for a tweet
+* Same_answer: True if user continuously only chooses one option
+* Average_novel_words: Average novel words highlighted by worker
+* Average_NOT_novel_words: Average not-novel words highlighted by worker
+* Novelty_cosine_similarity: Cosine similarity measure from CrowdTruth for novelty option for tweets
+* Novelty_worker_disagreement: Worker disagreement measure from CrowdTruth for novelty option for tweets
+* Spammer: Worker noted as a spammer by filters
 
 ####Tweets
 -Tweet_ID: Unique ID of the tweet
