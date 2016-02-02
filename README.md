@@ -50,7 +50,7 @@ The seed words given by the social scientists for whaling event are used to coll
 ###Crowdsourcing Experiments
 ![Crowdsource task](Images/Crowdflower task.png)
 
-The tasks on the Crowdflower platform consisted of two tasks. **“Novelty selection (1)”** task: is for annotating which tweet is more novel or irrelevant. The second task **“words highlighting (2)”** asks the user to highlight words that were novel, in comparison with the event summary description.
+The tasks on the Crowdflower platform consisted of two tasks. **“Novelty selection (1)”** task: is for annotating which tweet is more novel or irrelevant. The second task **“words highlighting (2)”** asks the user to highlight words that were novel, in comparison with the event summary description. The experiments were conducted on Crowdflower and a [description](https://github.com/CrowdTruth/CrowdTruth/wiki/Tweets-Novelty-Ranking) about the template and task design are available.
 
 In the **“Novelty selection”** part of the task the worker is asked to select which tweet is more novel (green banner), equally novel (blue banners for both tweets), less novel (red banner) or irrelevant (grey banner). The novelty selection is done by clicking the banners multiple times. Clicking the banner results into a different selection, the user can keep clicking until the desired option is selected. The next part of the task is the **“words highlighting”** task. For all the novelty conditions, except irrelevant, the worker has to select at least one word in each tweet that is deemed novel by the worker. Multiple words can be clicked one at a time.
 
