@@ -372,64 +372,6 @@ def processV4():
         i += 1
     create_explanation2()
 
-def processV5():
-    threshold_cos = mean_std_dev_COS()
-    threshold_dis = mean_std_dev_DIS()
-    i = 0
-    while i < len(worker_ID_list):
-        if worker_cosine_1[worker_ID_list[i]] < threshold_cos and worker_disagreement_2[worker_ID_list[i]] < threshold_dis:
-            spammer.append(1)
-            explanation_1_2.append(1)
-            explanation_1or2_3or4or5.append(0)
-            explanation_4_5.append(0)
-            avg_irrelevant_threshold.append(0)
-            avg_novel_selection.append(0)
-        elif worker_cosine_1[worker_ID_list[i]] < threshold_cos or worker_disagreement_2[worker_ID_list[i]] < threshold_dis:
-            if worker_consistency_dict_3[worker_ID_list[i]] == '1' or worker_irrelevant_behaviour_4[worker_ID_list[i]] > 0.5 or worker_annotation_frequency_5[worker_ID_list[i]] == '1':
-                spammer.append(1)
-                explanation_1_2.append(0)
-                explanation_1or2_3or4or5.append(1)
-                explanation_4_5.append(0)
-                avg_irrelevant_threshold.append(0)
-                avg_novel_selection.append(0)
-            else:
-                spammer.append(0)
-                explanation_1_2.append(0)
-                explanation_1or2_3or4or5.append(0)
-                explanation_4_5.append(0)
-                avg_irrelevant_threshold.append(0)
-                avg_novel_selection.append(0)
-        elif worker_irrelevant_behaviour_4[worker_ID_list[i]] > 0.5 and worker_annotation_frequency_5[worker_ID_list[i]] == '1':
-            spammer.append(1)
-            explanation_1_2.append(0)
-            explanation_1or2_3or4or5.append(0)
-            explanation_4_5.append(1)
-            avg_irrelevant_threshold.append(0)
-            avg_novel_selection.append(0)
-        elif worker_irrelevant_behaviour_4[worker_ID_list[i]] > 0.5 and avg_novelty_selected[worker_ID_list[i]] > 0.75:
-            spammer.append(1)
-            explanation_1_2.append(0)
-            explanation_1or2_3or4or5.append(0)
-            explanation_4_5.append(0)
-            avg_irrelevant_threshold.append(1)
-            avg_novel_selection.append(0)
-        elif worker_consistency_dict_3[worker_ID_list[i]] == 1:
-            spammer.append(1)
-            explanation_1_2.append(0)
-            explanation_1or2_3or4or5.append(0)
-            explanation_4_5.append(0)
-            avg_irrelevant_threshold.append(0)
-            avg_novel_selection.append(1)
-        else:
-            spammer.append(0)
-            explanation_1_2.append(0)
-            explanation_1or2_3or4or5.append(0)
-            explanation_4_5.append(0)
-            avg_irrelevant_threshold.append(0)
-            avg_novel_selection.append(0)
-        i += 1
-    create_explanation1()
-
 def processV6():
     threshold_cos = mean_half_std_dev_COS()
     threshold_dis = mean_half_std_dev_DIS()
