@@ -77,6 +77,5 @@ The next step is to use the Crowdtruth measures to check if the annotation of th
 The gathered and created data can aid in spam detection. Under certain conditions some workers are noted as spammers.
 
 *Counted novelty per Tweet*<br />
-![0.5 weight of scores](Images/WeightScores.png)
-
+![0.5 weight of scores](Images/WeightScores.png)<br />
 After removing all the spammers from the results, the aggregated novelty score of each tweet is calculated. When a tweet is novel +1, tweet is equal +0.5 and when the tweet is not novel -1. Only giving half a point resulted in a more smooth decrease in novelty score, visible in the figure above.
