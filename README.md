@@ -70,11 +70,11 @@ The next set of documents add extra information about the annotations. The [avg_
 *Average words highlighted*<br />
 After creating three sets containing information about the highlighted words, the average amount of highlighted words is calculated for each worker. This information can help in determining whether a worker is a spammer or not down the line.
 
-*Cosine distance and worker-worker disagreement*__
+*Cosine distance and worker-worker disagreement*<br />
 The next step is to use the Crowdtruth measures to check if the annotation of the worker are qualitative good. The novelty cosine calculates the distance similarity between aggregated annotation of all workers (without the current worker) and the worker itself. The worker-worker disagreement checks the degree of disagreement of the worker with the other workers. Sometimes a set of workers can disagree with the crowd without being a spammer. Worker-worker disagreement can pinpoint to sub-groups within the workers. The Crowdtruth ‘Metrics’ module is from Lepsma & Mauritz and is included in the database.
 
-*Spammer conditions*__
+*Spammer conditions*<br />
 The gathered and created data can aid in spam detection. Under certain conditions some workers are noted as spammers.
 
-*Counted novelty per Tweet*__
+*Counted novelty per Tweet*<br />
 After removing all the spammers from the results, the aggregated novelty score of each tweet is calculated. When a tweet is novel +1, tweet is equal +0.5 and when the tweet is not novel -1.
