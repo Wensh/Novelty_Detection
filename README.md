@@ -48,6 +48,8 @@ The seed words given by the social scientists for whaling event are used to coll
 - Novelty: novelty status of tweet
 
 ###Crowdsourcing Experiments
+![Crowdsource task](Images/Crowdflower task.png)
+
 The tasks on the Crowdflower platform consisted of two tasks. **“Novelty selection (1)”** task: is for annotating which tweet is more novel or irrelevant. The second task **“words highlighting (2)”** asks the user to highlight words that were novel, in comparison with the event summary description.
 Fig 1. Possible selections of the task
 
