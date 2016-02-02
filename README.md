@@ -68,17 +68,13 @@ The [data](Data) is stored in six different folders, each one indicating the day
 The next set of documents add extra information about the annotations. The [avg_words](Data/1FirstDay/f762129/avg_words.csv) file contains the average amount of highlighted novel words per worker. The folder [Crowdtruth vectors](Data/1FirstDay/f762129/CrowdTruth Vectors/) contains worker-worker disagreement and cosine similarity of each vector the useed average of them. Finally, there is an aggregated file named [aggregated_selections](Data/1FirstDay/f762129/aggregated_selections.csv) containing all the available information. After determining whether a worker is a spammer the results are stored in [Spam Identifications](Data/1FirstDay/f762129/Spam Identifications), [clean_data](Data/1FirstDay/f762129/Spam Identifications/clean_data.csv) contains the annotations without the workers and [counted_scores](Data/1FirstDay/f762129/Spam Identifications/counted_scores.csv) has the aggregated score of novelty of each tweet. Another document [explanation](Data/1FirstDay/f762129/Spam Identifications/explanation.csv) states why a worker was labeled as a spammer.
  
 *Average words highlighted*
-
 After creating three sets containing information about the highlighted words, the average amount of highlighted words is calculated for each worker. This information can help in determining whether a worker is a spammer or not down the line.
 
 *Cosine distance and worker-worker disagreement*
-
 The next step is to use the Crowdtruth measures to check if the annotation of the worker are qualitative good. The novelty cosine calculates the distance similarity between aggregated annotation of all workers (without the current worker) and the worker itself. The worker-worker disagreement checks the degree of disagreement of the worker with the other workers. Sometimes a set of workers can disagree with the crowd without being a spammer. Worker-worker disagreement can pinpoint to sub-groups within the workers. The Crowdtruth ‘Metrics’ module is from Lepsma & Mauritz and is included in the database.
 
 *Spammer conditions*
-
 The gathered and created data can aid in spam detection. Under certain conditions some workers are noted as spammers.
 
 *Counted novelty per Tweet*
-
 After removing all the spammers from the results, the aggregated novelty score of each tweet is calculated. When a tweet is novel +1, tweet is equal +0.5 and when the tweet is not novel -1.
