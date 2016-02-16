@@ -21,7 +21,7 @@ The seed words given by the social scientists for whaling event are used to coll
 - Novelty_worker_worker_agreement: Worker agreement measure from CrowdTruth for novelty option for tweets
 - Spammer: Worker noted as a spammer by filters
 
-####Tweets
+####[Tweets](Data/tweets2015.csv)
 - Tweet_ID: Unique ID of the tweet
 - Tweet_content: Content text of a tweet
 - Tweet_date: Date when tweet was posted
