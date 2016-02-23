@@ -97,9 +97,7 @@ The gathered and created data can aid in spam detection. Under certain condition
 | spammer | condition1 | condition2 | condition3 | condition4 |
 |---------|-------|--------------|-------|-----------|
 | 0       | 0     | 0            | 0     | 0         |
-| 0       | 0     | 0            | 0     | 0         |
-| 0       | 0     | 0            | 0     | 0         |
-| 0       | 0     | 0            | 0     | 0         |
+| 1       | 0     | 1            | 0     | 0         |
 | 0       | 0     | 0            | 0     | 0         |
 | 1       | 1     | 0            | 0     | 0         |
 
