@@ -38,6 +38,4 @@ def write_counts_to_csv(file_name, count_list):
 
 process()
 write_counts_to_csv('counted_entities.csv', calculated_entities_per_tweet)
-#placeholder
-
 
