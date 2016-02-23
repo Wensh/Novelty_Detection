@@ -90,7 +90,7 @@ After creating three sets containing information about the highlighted words, th
 *Cosine distance and worker-worker agreement*<br />
 The next step is to use the Crowdtruth measures to check if the annotation of the worker are qualitative good. The novelty cosine calculates the distance similarity between aggregated annotation of all workers (without the current worker) and the worker itself. The worker-worker agreement checks the degree of agreement of the worker with the other workers. Sometimes a set of workers can disagree with the crowd without being a spammer. Worker-worker agreement can pinpoint to sub-groups within the workers. The Crowdtruth ‘Metrics’ module is calculates these two measures based on the [CrowdTruth metrics](Data/CrowdTruthMetricsExplanations.pdf).
 
-*Spammer conditions*<br />
+*[Spammer conditions](https://dl.dropboxusercontent.com/u/50031225/factors-indicating-novelty.pdf#page=8)*<br />
 The gathered and created data can aid in spam detection. Under certain conditions some workers are noted as spammers.
 
 #####Spammer identification with explanation example
