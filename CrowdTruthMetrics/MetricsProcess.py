@@ -10,6 +10,7 @@ def get_file_path(filename):
 path_novel = get_file_path('data/CT_novelwords.csv')
 path_NOTnovel = get_file_path('data/CT_NOTnovelwords.csv')
 path_relevance = get_file_path('data/CT_Relevance.csv')
+path_novelty = get_file_path('CT_NoveltyTweetSelection.csv')
 
 #path_words = get_file_path('data/CT_word.csv')
 worker = []
@@ -45,6 +46,11 @@ try:
     print 'Relevance read succeeded'
 except:
     pass
+try:
+    read_csv(path_novelty, worker, tweet, vector)
+    print 'Novelty selection read succeeded'
+except:
+    pass
 #read_csv(path_words, worker_words, tweet_words, vector_words)
 
 def write_counts_to_csv(file_name, list):
@@ -76,16 +82,9 @@ for x in range(0, len(worker_words)):
 
 # workerdict[worker[x]] = {tweet[x]:vector[x]}
 worker_agreement = Metrics.get_worker_agreement(workerdict)
-# worker_agreement_words = Metrics.get_worker_agreement(workerdict_words)
-# worker_annotations = Metrics.get_worker_annotations(workerdict)
 cosine = Metrics.get_cosine_similarity(workerdict)
-# sentence_relation_score = Metrics.get_sentence_relation_score(workerdict)
-sentence_clarity = Metrics.get_sentence_clarity(workerdict)
-# relation_clarity = Metrics.relation_clarity(workerdict)
-# worker_sentence_score = Metrics.get_worker_sentence_score(workerdict)
 
 worker_unique = list(set(worker))
 
 write_counts_to_csv('Novelty_Cosine.csv',cosine)
 write_counts_to_csv('Novelty_Worker_Disagreement.csv',worker_agreement)
-write_counts_to_csv('sentence_clarity.csv',sentence_clarity)
