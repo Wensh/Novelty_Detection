@@ -92,14 +92,18 @@ The next step is to use the Crowdtruth measures to check if the annotation of th
 *Spammer conditions*<br />
 The gathered and created data can aid in spam detection. Under certain conditions some workers are noted as spammers.
 
-| spammer | 1and2 | 1or2_3or4or5 | 4and5 | avg_irr50 | avg_nov75 |
-|---------|-------|--------------|-------|-----------|-----------|
-| 0       | 0     | 0            | 0     | 0         | 0         |
-| 0       | 0     | 0            | 0     | 0         | 0         |
-| 0       | 0     | 0            | 0     | 0         | 0         |
-| 0       | 0     | 0            | 0     | 0         | 0         |
-| 0       | 0     | 0            | 0     | 0         | 0         |
-| 1       | 1     | 0            | 0     | 0         | 0         |
+#####Spammer identification with explanation
+
+| spammer | condition1 | condition2 | condition3 | condition4 |
+|---------|-------|--------------|-------|-----------|
+| 0       | 0     | 0            | 0     | 0         |
+| 0       | 0     | 0            | 0     | 0         |
+| 0       | 0     | 0            | 0     | 0         |
+| 0       | 0     | 0            | 0     | 0         |
+| 0       | 0     | 0            | 0     | 0         |
+| 1       | 1     | 0            | 0     | 0         |
+
+There are 4 set of conditions a worker has to confirm to, before being identified as a spammer. 
 
 *Counted novelty per Tweet*<br />
 ![0.5 weight of scores](Images/WeightScores.png)<br />
