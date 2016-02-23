@@ -1,6 +1,6 @@
 __author__ = 'marc'
 
-from Extractors import TextRazorApi, NerdApi, TdhApi, TagMeApi, SpotLightApi
+from Extractors import TextRazorApi, NerdApi, SpotLightApi
 from collections import Counter
 from nltk.corpus import sentiwordnet as swn
 import json
@@ -18,8 +18,6 @@ def process():
 
             entities = TextRazorApi.process_textrazor_api(text)
             entities += NerdApi.process_nerd_api(text)
-            #entities += TdhApi.process_tdh_api(text)
-            #entities += TagMeApi.process_tagme_api(text)
             entities += SpotLightApi.process_spotlight_api(text)
 
             write_to_mongo("localhost", 27017, "Tweets", "whaling_nlp", entities)
