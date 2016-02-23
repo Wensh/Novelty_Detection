@@ -80,7 +80,7 @@ The next set of documents add extra information about the annotations. The [avg_
 | 33761260  | 4          | 4             | 4          | 6          | 0.3333333333333333  | 0.222222222222222            | 0           | 3.5             | 2                   | 0.63           | 0.5                         | 0       | 0                |
 | 33727304  | 4          | 12            | 4          | 0          | 0                   | 0.2                          | 0           | 4.56            | 1.75                | 0.84           | 0.6                         | 0       | 0                |
 
- *Novelty selectiond*<br />
+ *Novelty selection*<br />
  More_novel, equally_novel, less_novel and irrelevant states how many times a worker annotated a tweet as more novel, equally novel, less novel and irrelevant. Irr_behaviour means the percentage of irrelevant the worker chose, so irrelevant quantity divided by the other novelty selection options. Novelty_selection is more_novel quantity divided by the total of novelty annotations. Same answer simply states if the worker always chose the same option. 
  
 *Average words highlighted*<br />
