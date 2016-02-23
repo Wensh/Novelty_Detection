@@ -80,9 +80,11 @@ The next set of documents add extra information about the annotations. The [avg_
 | 33761260  | 4          | 4             | 4          | 6          | 0.3333333333333333  | 0.222222222222222            | 0           | 3.5             | 2                   | 0.63           | 0.5                         | 0       | 0                |
 | 33727304  | 4          | 12            | 4          | 0          | 0                   | 0.2                          | 0           | 4.56            | 1.75                | 0.84           | 0.6                         | 0       | 0                |
 
+ *Novelty selectiond*<br />
+ More_novel, equally_novel, less_novel and irrelevant states how many times a worker annotated a tweet as more novel, equally novel, less novel and irrelevant. Irr_behaviour means the percentage of irrelevant the worker chose, so irrelevant quantity divided by the other novelty selection options. Novelty_selection is more_novel quantity divided by the total of novelty annotations. Same answer simply states if the worker always chose the same option. 
  
 *Average words highlighted*<br />
-After creating three sets containing information about the highlighted words, the average amount of highlighted words is calculated for each worker. This information can help in determining whether a worker is a spammer or not down the line.
+After creating three sets containing information about the highlighted words, the average amount of highlighted words is calculated for each worker. Avg_novel_words is the average of all highlighted words of the more_novel tweet, vice versa for avg_NOT_novel_words. This information can help in determining whether a worker is a spammer or not down the line.
 
 *Cosine distance and worker-worker agreement*<br />
 The next step is to use the Crowdtruth measures to check if the annotation of the worker are qualitative good. The novelty cosine calculates the distance similarity between aggregated annotation of all workers (without the current worker) and the worker itself. The worker-worker agreement checks the degree of agreement of the worker with the other workers. Sometimes a set of workers can disagree with the crowd without being a spammer. Worker-worker agreement can pinpoint to sub-groups within the workers. The Crowdtruth ‘Metrics’ module is from Lepsma & Mauritz and is included in the database.
