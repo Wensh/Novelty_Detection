@@ -55,7 +55,7 @@ The tasks on the Crowdflower platform consisted of two tasks. **“Novelty selec
 In the **“Novelty selection”** part of the task the worker is asked to select which tweet is more novel (green banner), equally novel (blue banners for both tweets), less novel (red banner) or irrelevant (grey banner). The novelty selection is done by clicking the banners multiple times. Clicking the banner results into a different selection, the user can keep clicking until the desired option is selected. The next part of the task is the **“words highlighting”** task. For all the novelty conditions, except irrelevant, the worker has to select at least one word in each tweet that is deemed novel by the worker. Multiple words can be clicked one at a time.
 
 ###Experiment Results
-Correlation results
+Correlation results <br/>
 ![Correlations](Images/Correlations.png)
 
 Correlation results in a bar chart
