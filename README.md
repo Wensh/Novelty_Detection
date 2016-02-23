@@ -47,6 +47,8 @@ The [seed words](Data/Documents/Whaling_Seed_Words.txt) given by the social scie
 - Sentiment_score: Sentiment score of tweet
 - Novelty: novelty status of tweet
 
+To gather the entities count, three different entities API's are used: [NERD](EntityExtractor/Extractors/NerdApi.py), [TextRazor](EntityExtractor/Extractors/TextRazorApi.py) and [DBpedia SpotLight](EntityExtractor/Extractors/SpotLightApi.py). The [entities count process](EntityExtractor/Process.py) module looks up the words in the tweets and checks if they are entities in one of the three API's. The [output](EntityExtractor/Data/counts.csv) file is written to a local MongoDB database. This file with all found entities are than used as input for the [entities count](EntityExtractor/EntityCount.py) module. This module checks how many entities are found in every tweet and give the entities count as [output](Data/Documents/tweets2015.csv). The sentiment score is calculated with the SentiWordNet API in the [SentimentCalculation](EntityExtractor/SentimentCalculation.py) module.
+
 ###Crowdsourcing Experiments
 ![Crowdsource task](Images/Crowdflower task.png)
 
@@ -81,8 +83,8 @@ The next set of documents add extra information about the annotations. The [avg_
 | 33761260  | 4          | 4             | 4          | 6          | 0.3333333333333333  | 0.222222222222222            | 0           | 3.5             | 2                   | 0.63           | 0.5                         | 0       | 0                |
 | 33727304  | 4          | 12            | 4          | 0          | 0                   | 0.2                          | 0           | 4.56            | 1.75                | 0.84           | 0.6                         | 0       | 0                |
 
- *Novelty selection*<br />
- More_novel, equally_novel, less_novel and irrelevant states how many times a worker annotated a tweet as more novel, equally novel, less novel and irrelevant. Irr_behaviour means the percentage of irrelevant the worker chose, so irrelevant quantity divided by the other novelty selection options. Novelty_selection is more_novel quantity divided by the total of novelty annotations. Same answer simply states if the worker always chose the same option. 
+*Novelty selection*<br />
+More_novel, equally_novel, less_novel and irrelevant states how many times a worker annotated a tweet as more novel, equally novel, less novel and irrelevant. Irr_behaviour means the percentage of irrelevant the worker chose, so irrelevant quantity divided by the other novelty selection options. Novelty_selection is more_novel quantity divided by the total of novelty annotations. Same answer simply states if the worker always chose the same option. 
  
 *Average words highlighted*<br />
 After creating three sets containing information about the highlighted words, the average amount of highlighted words is calculated for each worker. Avg_novel_words is the average of all highlighted words of the more_novel tweet, vice versa for avg_NOT_novel_words. This information can help in determining whether a worker is a spammer or not down the line.
