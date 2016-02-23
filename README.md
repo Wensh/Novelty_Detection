@@ -70,9 +70,21 @@ Also with the [cosine similarity](Data/1FirstDay/f762129/CrowdTruth Vectors/Aver
 ####Workflow
 The [data](Data) is stored in six different folders, each one indicating the day where the tweets were created. From the [raw data](Data/1FirstDay) collected from Crowdflower, several vectors are created. One is a csv [CT_NoveltyTweetSelection](Data/1FirstDay/f762129/Vectors/CT_NoveltyTweetSelection.csv) with the worker ID, tweet ID and the corresponding annotated tweet on novelty. Four more documents are created [CT_novelwords](Data/1FirstDay/f762129/Vectors/CT_novelwords.csv), [CT_NOTnovelwords](Data/1FirstDay/f762129/Vectors/CT_NOTnovelwords.csv), [CT_Relevance](Data/1FirstDay/f762129/Vectors/CT_Relevance.csv) and [Consistency](Data/1FirstDay/f762129/Vectors/Consistency.csv). [CT_novelwords](Data/1FirstDay/f762129/Vectors/CT_novelwords.csv) and [CT_NOTnovelwords](Data/1FirstDay/f762129/Vectors/CT_NOTnovelwords.csv) contain respectively information about the highlighted words in the novel tweet and not-novel tweet. [CT_Relevance](Data/1FirstDay/f762129/Vectors/CT_Relevance.csv) contains information if the tweet is deemed relevant and [consistency](Data/1FirstDay/f762129/Vectors/Consistency.csv) tells if the worker did not highlight words in a novel or equally novel tweet.
 The next set of documents add extra information about the annotations. The [avg_words](Data/1FirstDay/f762129/avg_words.csv) file contains the average amount of highlighted novel words per worker. The folder [Crowdtruth vectors](Data/1FirstDay/f762129/CrowdTruth Vectors/) contains worker-worker agreement and cosine similarity of each vector the useed average of them. Finally, there is an aggregated file named [aggregated_selections](Data/1FirstDay/f762129/aggregated_selections.csv) containing all the available information. After determining whether a worker is a spammer the results are stored in [Spam Identifications](Data/1FirstDay/f762129/Spam Identifications), [clean_data](Data/1FirstDay/f762129/Spam Identifications/clean_data.csv) contains the annotations without the workers and [counted_scores](Data/1FirstDay/f762129/Spam Identifications/counted_scores.csv) has the aggregated score of novelty of each tweet. Another document [explanation](Data/1FirstDay/f762129/Spam Identifications/explanation.csv) states why a worker was labeled as a spammer.
+
+#####Table with aggregated tweet information
+
+| worker_ID | more_novel | equally_novel | less_novel | irrelevant | irr_behaviour       | novelty_selection_percentage | same_answer | avg_novel_words | avg_NOT_novel_words | Novelty_Cosine | Novelty_Worker_Disagreement | spammer | manually_checked |
+|-----------|------------|---------------|------------|------------|---------------------|------------------------------|-------------|-----------------|---------------------|----------------|-----------------------------|---------|------------------|
+| 33903622  | 1          | 18            | 1          | 0          | 0                   | 0.05                         | 0           | 5.74            | 4                   | 0.89           | 0.64                        | 0       | 0                |
+| 33793607  | 0          | 20            | 0          | 0          | 0                   | 0                            | 1           | 5.25            | NONE                | 0.89           | 0.68                        | 0       | 0                |
+| 33761260  | 4          | 4             | 4          | 6          | 0.3333333333333333  | 0.222222222222222            | 0           | 3.5             | 2                   | 0.63           | 0.5                         | 0       | 0                |
+| 33727304  | 4          | 12            | 4          | 0          | 0                   | 0.2                          | 0           | 4.56            | 1.75                | 0.84           | 0.6                         | 0       | 0                |
+
+ *Novelty selection*<br />
+ More_novel, equally_novel, less_novel and irrelevant states how many times a worker annotated a tweet as more novel, equally novel, less novel and irrelevant. Irr_behaviour means the percentage of irrelevant the worker chose, so irrelevant quantity divided by the other novelty selection options. Novelty_selection is more_novel quantity divided by the total of novelty annotations. Same answer simply states if the worker always chose the same option. 
  
 *Average words highlighted*<br />
-After creating three sets containing information about the highlighted words, the average amount of highlighted words is calculated for each worker. This information can help in determining whether a worker is a spammer or not down the line.
+After creating three sets containing information about the highlighted words, the average amount of highlighted words is calculated for each worker. Avg_novel_words is the average of all highlighted words of the more_novel tweet, vice versa for avg_NOT_novel_words. This information can help in determining whether a worker is a spammer or not down the line.
 
 *Cosine distance and worker-worker agreement*<br />
 The next step is to use the Crowdtruth measures to check if the annotation of the worker are qualitative good. The novelty cosine calculates the distance similarity between aggregated annotation of all workers (without the current worker) and the worker itself. The worker-worker agreement checks the degree of agreement of the worker with the other workers. Sometimes a set of workers can disagree with the crowd without being a spammer. Worker-worker agreement can pinpoint to sub-groups within the workers. The Crowdtruth ‘Metrics’ module is from Lepsma & Mauritz and is included in the database.
@@ -80,6 +92,20 @@ The next step is to use the Crowdtruth measures to check if the annotation of th
 *Spammer conditions*<br />
 The gathered and created data can aid in spam detection. Under certain conditions some workers are noted as spammers.
 
+#####Spammer identification with explanation
+
+| spammer | condition1 | condition2 | condition3 | condition4 |
+|---------|-------|--------------|-------|-----------|
+| 0       | 0     | 0            | 0     | 0         |
+| 0       | 0     | 0            | 0     | 0         |
+| 0       | 0     | 0            | 0     | 0         |
+| 0       | 0     | 0            | 0     | 0         |
+| 0       | 0     | 0            | 0     | 0         |
+| 1       | 1     | 0            | 0     | 0         |
+
+*Spam Detection Methods*<br />
+There are 4 set of conditions a worker has to conform to, before being identified as a spammer. Condition 1 means that the worker exceeded both the threshold on the cosine distance and worker-worker agreement. Condition 2 means that the worker exceeded either one of those 2 thresholds. Additionally the worker has to confirm one of the following conditions: worker consistency, worker irrelevant behaviour, worker annotation frequency or avg_novel_words > 2. Condition 3 checks if the worker irrelevant behaviour > 0.5 and if worker annotation frequency is true. For condition 4 to ring true, the worker has to conform to all three variables. Worker annotation frequency is true, avg_novel_words selected < 1.2 amount of tweets highlighted > 7.
+
 *Counted novelty per Tweet*<br />
+After removing all the spammers from the results, the aggregated novelty score of each tweet is calculated. When a tweet is novel +1, tweet is equal +0.5 and when the tweet is not novel -1. Only giving half a point resulted in a more smooth decrease in novelty score, this transition is visible in the following figure. <br />
 ![0.5 weight of scores](Images/WeightScores.png)<br />
-After removing all the spammers from the results, the aggregated novelty score of each tweet is calculated. When a tweet is novel +1, tweet is equal +0.5 and when the tweet is not novel -1. Only giving half a point resulted in a more smooth decrease in novelty score, visible in the figure above.
