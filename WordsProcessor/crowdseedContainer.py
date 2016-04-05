@@ -31,10 +31,11 @@ def read_csv(filepath):
 def read_csv_target(filepath):
     with open(filepath, 'rU') as csvfile:
         reader = csv.reader(csvfile)
+        next(reader)
         for row in reader:
             content.append(row[0])
 
-path = get_file_path('Data/crowdwords.csv')
+path = get_file_path('Data/relevance_scores.csv')
 read_csv(path)
 path_target = get_file_path('Data/content.csv')
 read_csv_target(path_target)
@@ -42,14 +43,20 @@ read_csv_target(path_target)
 def process():
     i = 0
     while i < len(content):
+        score = 0
         counter = 0
         j = 0
         words = content[i].split()
         for word in words:
             j += 1
             if word in seed_words:
-                counter += event_score[j]
-        content_position.append(counter)
+                score += event_score[j]
+                counter += 1
+        if counter is 0:
+            content_position.append(score/1)
+        else:
+            content_position.append(score/counter)
+        print '%f/%f' %(score,counter)
         i += 1
 
 process()
